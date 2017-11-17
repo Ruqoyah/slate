@@ -201,7 +201,7 @@
       <script src="javascripts/all.js"></script>
   </head>
 
-  <body class="index" data-languages="[&quot;shell&quot;,&quot;ruby&quot;,&quot;python&quot;,&quot;javascript&quot;]">
+  <body class="index" data-languages="[&quot;javascript&quot;]">
     <a href="#" id="nav-button">
       <span>
         NAV
@@ -211,9 +211,6 @@
     <div class="toc-wrapper">
       <img src="images/logo.png" class="logo" alt="Logo" />
         <div class="lang-selector">
-              <a href="#" data-language-name="shell">shell</a>
-              <a href="#" data-language-name="ruby">ruby</a>
-              <a href="#" data-language-name="python">python</a>
               <a href="#" data-language-name="javascript">javascript</a>
         </div>
         <div class="search">
@@ -225,19 +222,83 @@
             <a href="#introduction" class="toc-h1 toc-link" data-title="Introduction">Introduction</a>
           </li>
           <li>
+            <a href="#development" class="toc-h1 toc-link" data-title="Development">Development</a>
+          </li>
+          <li>
+            <a href="#installation" class="toc-h1 toc-link" data-title="Installation">Installation</a>
+          </li>
+          <li>
             <a href="#authentication" class="toc-h1 toc-link" data-title="Authentication">Authentication</a>
           </li>
           <li>
-            <a href="#kittens" class="toc-h1 toc-link" data-title="Kittens">Kittens</a>
+            <a href="#api-summary" class="toc-h1 toc-link" data-title="Api Summary">Api Summary</a>
               <ul class="toc-list-h2">
                   <li>
-                    <a href="#get-all-kittens" class="toc-h2 toc-link" data-title="Get All Kittens">Get All Kittens</a>
+                    <a href="#below-are-the-api-endpoints-and-their-functions" class="toc-h2 toc-link" data-title="Below are the API endpoints and their functions">Below are the API endpoints and their functions</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#users" class="toc-h1 toc-link" data-title="Users">Users</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#sign-up-user" class="toc-h2 toc-link" data-title="Sign up User">Sign up User</a>
                   </li>
                   <li>
-                    <a href="#get-a-specific-kitten" class="toc-h2 toc-link" data-title="Get a Specific Kitten">Get a Specific Kitten</a>
+                    <a href="#sign-in-user" class="toc-h2 toc-link" data-title="Sign in User">Sign in User</a>
                   </li>
                   <li>
-                    <a href="#delete-a-specific-kitten" class="toc-h2 toc-link" data-title="Delete a Specific Kitten">Delete a Specific Kitten</a>
+                    <a href="#get-user-details" class="toc-h2 toc-link" data-title="Get User Details">Get User Details</a>
+                  </li>
+                  <li>
+                    <a href="#edit-profile" class="toc-h2 toc-link" data-title="Edit profile">Edit profile</a>
+                  </li>
+                  <li>
+                    <a href="#check-if-username-exist" class="toc-h2 toc-link" data-title="Check if username exist">Check if username exist</a>
+                  </li>
+                  <li>
+                    <a href="#check-if-email-exist" class="toc-h2 toc-link" data-title="Check if email exist">Check if email exist</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#recipe" class="toc-h1 toc-link" data-title="Recipe">Recipe</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#add-recipe" class="toc-h2 toc-link" data-title="Add Recipe">Add Recipe</a>
+                  </li>
+                  <li>
+                    <a href="#get-user-recipes" class="toc-h2 toc-link" data-title="Get User Recipes">Get User Recipes</a>
+                  </li>
+                  <li>
+                    <a href="#get-all-recipes" class="toc-h2 toc-link" data-title="Get All Recipes">Get All Recipes</a>
+                  </li>
+                  <li>
+                    <a href="#modify-recipe" class="toc-h2 toc-link" data-title="Modify Recipe">Modify Recipe</a>
+                  </li>
+                  <li>
+                    <a href="#view-recipes" class="toc-h2 toc-link" data-title="View Recipes">View Recipes</a>
+                  </li>
+                  <li>
+                    <a href="#delete-recipes" class="toc-h2 toc-link" data-title="Delete Recipes">Delete Recipes</a>
+                  </li>
+                  <li>
+                    <a href="#post-reviews" class="toc-h2 toc-link" data-title="Post Reviews">Post Reviews</a>
+                  </li>
+                  <li>
+                    <a href="#get-recipe-reviews" class="toc-h2 toc-link" data-title="Get Recipe Reviews">Get Recipe Reviews</a>
+                  </li>
+                  <li>
+                    <a href="#add-favorite-recipes" class="toc-h2 toc-link" data-title="Add Favorite Recipes">Add Favorite Recipes</a>
+                  </li>
+                  <li>
+                    <a href="#get-user-favorite-recipes" class="toc-h2 toc-link" data-title="Get User Favorite Recipes">Get User Favorite Recipes</a>
+                  </li>
+                  <li>
+                    <a href="#upvote-recipes" class="toc-h2 toc-link" data-title="Upvote Recipes">Upvote Recipes</a>
+                  </li>
+                  <li>
+                    <a href="#downvote-recipes" class="toc-h2 toc-link" data-title="Downvote Recipes">Downvote Recipes</a>
                   </li>
               </ul>
           </li>
@@ -254,185 +315,782 @@
       <div class="dark-box"></div>
       <div class="content">
         <h1 id='introduction'>Introduction</h1>
-<p>Welcome to the Kittn API! You can use our API to access Kittn API endpoints, which can get information on various cats, kittens, and breeds in our database.</p>
-
-<p>We have language bindings in Shell, Ruby, and Python! You can view code examples in the dark area to the right, and you can switch the programming language of the examples with the tabs in the top right.</p>
-
-<p>This example API documentation page was created with <a href="https://github.com/lord/slate">Slate</a>. Feel free to edit it and use it as a base for your own API&#39;s documentation.</p>
+<p>More-Recipes provides a platform for users to share the awesome and exciting  recipe ideas they have invented or learnt.  Suppose a user comes up with a food recipe,  he/she can post it on More-Recipes and  get feedback in form of reviews and votes from other users who explore that recipe. Users can also keep a list of their favorite recipes on the application.</p>
+<h1 id='development'>Development</h1>
+<p>The application was developed with <a href="http://nodejs.org">NodeJs</a> and <a href="http://expressjs.com">Express</a> is used for routing. The <a href="https://www.postgresql.org">PostgreSQL</a> database was used with <a href="http://sequelize.readthedocs.io">Sequelize</a> as the ORM</p>
+<h1 id='installation'>Installation</h1>
+<ol>
+<li> Ensure you have NodeJs and PostgreSQL installed</li>
+<li> Clone the repository <code>https://github.com/Ruqoyah/More-Recipes.git</code></li>
+<li> Change your directory <code>cd More-Recipes</code></li>
+<li> Install all dependencies <code>npm install</code></li>
+<li> Start the app <code>npm start</code> for development Or</li>
+<li> Use [postman] to consume the API</li>
+</ol>
 <h1 id='authentication'>Authentication</h1>
+<p>More-Recipes uses (username and password) to login to allow access to the API protected routes. On registering or login, a token is generated.
+More-Recipes expect the token to be included in the header or body as <code>x-access-token: token</code>. All API requests to the server are stated below</p>
+<h1 id='api-summary'>Api Summary</h1><h2 id='below-are-the-api-endpoints-and-their-functions'>Below are the API endpoints and their functions</h2>
+<table><thead>
+<tr>
+<th>EndPoint</th>
+<th>Functionality</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>POST /api/v1/users/signup</td>
+<td>Create a new users.</td>
+</tr>
+<tr>
+<td>POST /api/v1/users/signin</td>
+<td>Login users.</td>
+</tr>
+<tr>
+<td>GET /api/v1/users/:userId</td>
+<td>Get user details.</td>
+</tr>
+<tr>
+<td>PUT /api/v1/user/:userId</td>
+<td>Edit profile.</td>
+</tr>
+<tr>
+<td>POST /api/v1/users/userexist</td>
+<td>Check if username exist.</td>
+</tr>
+<tr>
+<td>POST /api/v1/users/emailexist</td>
+<td>Check if email exist.</td>
+</tr>
+<tr>
+<td>GET /api/v1/users</td>
+<td>Get all users (Applicable to admin).</td>
+</tr>
+<tr>
+<td>POST /api/v1/recipes</td>
+<td>Add recipes</td>
+</tr>
+<tr>
+<td>GET /api/v1/:userId/recipes</td>
+<td>Get user recipes</td>
+</tr>
+<tr>
+<td>GET /api/v1/recipes</td>
+<td>Get all recipes</td>
+</tr>
+<tr>
+<td>PUT /api/v1/recipes/:recipeId</td>
+<td>Modify recipes</td>
+</tr>
+<tr>
+<td>GET /api/v1/recipes/:recipeId</td>
+<td>View recipes</td>
+</tr>
+<tr>
+<td>DELETE /api/v1/recipes/:recipeId</td>
+<td>Delete recipes</td>
+</tr>
+<tr>
+<td>POST /api/v1/recipes/:recipeId/reviews</td>
+<td>Post reviews</td>
+</tr>
+<tr>
+<td>GET /api/v1/recipes/:recipeId/reviews</td>
+<td>Get recipe reviews</td>
+</tr>
+<tr>
+<td>POST /api/v1/users/:recipeId/recipes</td>
+<td>Add favorite recipes</td>
+</tr>
+<tr>
+<td>GET /api/v1/users/:userId/recipes</td>
+<td>Get User favorite recipes</td>
+</tr>
+<tr>
+<td>POST /api/v1/users/upvote/:recipeId</td>
+<td>Upvote recipes</td>
+</tr>
+<tr>
+<td>POST /api/v1/users/downvote/:recipeId</td>
+<td>Downvote recipes</td>
+</tr>
+</tbody></table>
+<h1 id='users'>Users</h1><h2 id='sign-up-user'>Sign up User</h2><h3 id='request'>Request</h3>
+<ul>
+<li>Endpoint: Post: <code>/api/v1/users/signup</code> </li>
+<li>Body  <code>(application/json)</code> 
+### Response</li>
+<li>Status: <code>201 created</code> </li>
+<li>Body  <code>(application/json)</code> </li>
+</ul>
+
 <blockquote>
-<p>To authorize, use this code:</p>
+<p>Request:</p>
 </blockquote>
-<pre class="highlight ruby tab-ruby"><code><span class="nb">require</span> <span class="s1">'kittn'</span>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="s2">"username"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ruqoyah"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"fullName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"rukayat odukoya"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ruqoyah@gmail.com"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"password"</span><span class="p">:</span><span class="w"> </span><span class="s2">"password"</span><span class="w">
+</span><span class="p">},</span><span class="w">
+</span></code></pre>
+<aside class="notice">You must set the token at the header or body after sign up to access protected routes (x-access-token: token)</aside>
 
-<span class="n">api</span> <span class="o">=</span> <span class="no">Kittn</span><span class="o">::</span><span class="no">APIClient</span><span class="p">.</span><span class="nf">authorize!</span><span class="p">(</span><span class="s1">'meowmeowmeow'</span><span class="p">)</span>
-</code></pre><pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">kittn</span>
-
-<span class="n">api</span> <span class="o">=</span> <span class="n">kittn</span><span class="o">.</span><span class="n">authorize</span><span class="p">(</span><span class="s">'meowmeowmeow'</span><span class="p">)</span>
-</code></pre><pre class="highlight shell tab-shell"><code><span class="c"># With shell, you can just pass the correct header with each request</span>
-curl <span class="s2">"api_endpoint_here"</span>
-  -H <span class="s2">"Authorization: meowmeowmeow"</span>
-</code></pre><pre class="highlight javascript tab-javascript"><code><span class="kr">const</span> <span class="nx">kittn</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'kittn'</span><span class="p">);</span>
-
-<span class="kd">let</span> <span class="nx">api</span> <span class="o">=</span> <span class="nx">kittn</span><span class="p">.</span><span class="nx">authorize</span><span class="p">(</span><span class="s1">'meowmeowmeow'</span><span class="p">);</span>
-</code></pre>
 <blockquote>
-<p>Make sure to replace <code>meowmeowmeow</code> with your API key.</p>
+<p>Response:</p>
 </blockquote>
+<pre class="highlight json tab-json"><code><span class="w">
+ </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"You have successfully signed up"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+       </span><span class="s2">"token"</span><span class="p">:</span><span class="w"> </span><span class="s2">"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJjdXJyZW50VXNlciI6eyJ1c2VySWQiOjE2LCJ1c2VybmFtZSI6InJ1cW95YWgiLCJmdWxsbmFtZSI6InJ1a2F5YXQgb2R1a295YSIsImlzQWRtaW4iOjB9LCJpYXQiOjE1MTA5Mzc1MjV9.jP4eHTU4QRpXW-3-GJ1EcHeA5y-amtEfI-ltJu8ynyc"</span><span class="p">,</span><span class="w">
+       </span><span class="s2">"userId"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
 
-<p>Kittn uses API keys to allow access to the API. You can register a new Kittn API key at our <a href="http://example.com/developers">developer portal</a>.</p>
+</span></code></pre><h2 id='sign-in-user'>Sign in User</h2><h3 id='request-2'>Request</h3>
+<ul>
+<li>Endpoint: Post: <code>/api/v1/users/signin</code> </li>
+<li>Body  <code>(application/json)</code> 
+### Response</li>
+<li>Status: <code>200 created</code> </li>
+<li>Body  <code>(application/json)</code> </li>
+</ul>
 
-<p>Kittn expects for the API key to be included in all API requests to the server in a header that looks like the following:</p>
-
-<p><code>Authorization: meowmeowmeow</code></p>
-
-<aside class="notice">
-You must replace <code>meowmeowmeow</code> with your personal API key.
-</aside>
-<h1 id='kittens'>Kittens</h1><h2 id='get-all-kittens'>Get All Kittens</h2><pre class="highlight ruby tab-ruby"><code><span class="nb">require</span> <span class="s1">'kittn'</span>
-
-<span class="n">api</span> <span class="o">=</span> <span class="no">Kittn</span><span class="o">::</span><span class="no">APIClient</span><span class="p">.</span><span class="nf">authorize!</span><span class="p">(</span><span class="s1">'meowmeowmeow'</span><span class="p">)</span>
-<span class="n">api</span><span class="p">.</span><span class="nf">kittens</span><span class="p">.</span><span class="nf">get</span>
-</code></pre><pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">kittn</span>
-
-<span class="n">api</span> <span class="o">=</span> <span class="n">kittn</span><span class="o">.</span><span class="n">authorize</span><span class="p">(</span><span class="s">'meowmeowmeow'</span><span class="p">)</span>
-<span class="n">api</span><span class="o">.</span><span class="n">kittens</span><span class="o">.</span><span class="n">get</span><span class="p">()</span>
-</code></pre><pre class="highlight shell tab-shell"><code>curl <span class="s2">"http://example.com/api/kittens"</span>
-  -H <span class="s2">"Authorization: meowmeowmeow"</span>
-</code></pre><pre class="highlight javascript tab-javascript"><code><span class="kr">const</span> <span class="nx">kittn</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'kittn'</span><span class="p">);</span>
-
-<span class="kd">let</span> <span class="nx">api</span> <span class="o">=</span> <span class="nx">kittn</span><span class="p">.</span><span class="nx">authorize</span><span class="p">(</span><span class="s1">'meowmeowmeow'</span><span class="p">);</span>
-<span class="kd">let</span> <span class="nx">kittens</span> <span class="o">=</span> <span class="nx">api</span><span class="p">.</span><span class="nx">kittens</span><span class="p">.</span><span class="nx">get</span><span class="p">();</span>
-</code></pre>
 <blockquote>
-<p>The above command returns JSON structured like this:</p>
+<p>Request:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="s2">"username"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ruqoyah"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"password"</span><span class="p">:</span><span class="w"> </span><span class="s2">"password"</span><span class="w">
+</span><span class="p">},</span><span class="w">
+</span></code></pre>
+<aside class="notice">You must set the token at the header or body after login to access protected routes (x-access-token: token)</aside>
+
+<blockquote>
+<p>Response:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"You have successfully signed in!"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+       </span><span class="s2">"token"</span><span class="p">:</span><span class="w"> </span><span class="s2">"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJjdXJyZW50VXNlciI6eyJ1c2VySWQiOjE2LCJ1c2VybmFtZSI6InJ1cW95YWgiLCJmdWxsbmFtZSI6InJ1a2F5YXQgb2R1a295YSIsImlzQWRtaW4iOjB9LCJpYXQiOjE1MTA5MzgwOTR9.vA4bXtsBdydyXi1ve2vXiuaTL75b87R4_VhcyUWr3EA"</span><span class="p">,</span><span class="w">
+       </span><span class="s2">"userId"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+
+</span></code></pre><h2 id='get-user-details'>Get User Details</h2><h3 id='request-3'>Request</h3>
+<ul>
+<li>Endpoint: Get: <code>/api/v1/users/:userId</code> </li>
+<li>Body  <code>(application/json)</code> 
+### Response</li>
+<li>Status: <code>200 ok</code> </li>
+<li>Body  <code>(application/json)</code> </li>
+</ul>
+
+<blockquote>
+<p>Response:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"username"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ruqoyah"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"fullName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"rukayat odukoya"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ruqoyah@gmail.com"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+
+</span></code></pre><h2 id='edit-profile'>Edit profile</h2><h3 id='request-4'>Request</h3>
+<ul>
+<li>Endpoint: Put: <code>/api/v1/user/:userId</code> </li>
+<li>Body  <code>(application/json)</code> 
+### Response</li>
+<li>Status: <code>200 ok</code> </li>
+<li>Body  <code>(application/json)</code> </li>
+</ul>
+
+<blockquote>
+<p>Request:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="s2">"username"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ruqqie"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"picture"</span><span class="p">:</span><span class="w"> </span><span class="s2">"t5rqx9hzbat7f93mgwjn"</span><span class="w">
+</span><span class="p">},</span><span class="w">
+</span></code></pre>
+<blockquote>
+<p>Response:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Profile updated sucessfully!"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"username"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ruqqie"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"fullName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"rukayat odukoya"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ruqoyah@gmail.com"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"picture"</span><span class="p">:</span><span class="w"> </span><span class="s2">"t5rqx9hzbat7f93mgwjn"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+
+</span></code></pre><h2 id='check-if-username-exist'>Check if username exist</h2><h3 id='request-5'>Request</h3>
+<ul>
+<li>Endpoint: Post: <code>/api/v1/users/userexist</code> </li>
+<li>Body  <code>(application/json)</code> 
+### Response</li>
+<li>Status: <code>200 ok</code> </li>
+<li>Body  <code>(application/json)</code> </li>
+</ul>
+
+<blockquote>
+<p>Request:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="s2">"username"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ruqqie"</span><span class="w">
+</span><span class="p">},</span><span class="w">
+</span></code></pre>
+<blockquote>
+<p>Response:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="w">
+</span><span class="kc">true</span><span class="w">
+
+</span></code></pre><h2 id='check-if-email-exist'>Check if email exist</h2><h3 id='request-6'>Request</h3>
+<ul>
+<li>Endpoint: Post: <code>/api/v1/users/emailexist</code> </li>
+<li>Body  <code>(application/json)</code> 
+### Response</li>
+<li>Status: <code>200 ok</code> </li>
+<li>Body  <code>(application/json)</code> </li>
+</ul>
+
+<blockquote>
+<p>Request:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="s2">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ruqoyah@gmail.com"</span><span class="w">
+</span><span class="p">},</span><span class="w">
+</span></code></pre>
+<blockquote>
+<p>Response:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="w">
+</span><span class="kc">true</span><span class="w">
+
+</span></code></pre><h1 id='recipe'>Recipe</h1><h2 id='add-recipe'>Add Recipe</h2><h3 id='request-7'>Request</h3>
+<ul>
+<li>Endpoint: Post: <code>/api/v1/recipes</code> </li>
+<li>Body  <code>(application/json)</code> 
+### Response</li>
+<li>Status: <code>201 created</code> </li>
+<li>Body  <code>(application/json)</code> </li>
+</ul>
+
+<blockquote>
+<p>Request:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="s2">"recipeName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"sweet pizza"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"ingredient"</span><span class="p">:</span><span class="w"> </span><span class="s2">"rukayat odukoya"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"details"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ruqoyah@gmail.com"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"picture"</span><span class="p">:</span><span class="w"> </span><span class="s2">"et1xp6qa7a7cznkfpgwn"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"userId"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"creator"</span><span class="p">:</span><span class="w"> </span><span class="err">ruqqie</span><span class="w">
+</span><span class="p">},</span><span class="w">
+</span></code></pre>
+<blockquote>
+<p>Response:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="w">
+</span><span class="p">{</span><span class="w">
+    </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Recipe added successfully"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"upvotes"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"downvotes"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"views"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">50</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"recipeName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"sweet pizza"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"ingredient"</span><span class="p">:</span><span class="w"> </span><span class="s2">"pizza"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"details"</span><span class="p">:</span><span class="w"> </span><span class="s2">"pizza"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"picture"</span><span class="p">:</span><span class="w"> </span><span class="s2">"et1xp6qa7a7cznkfpgwn"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"creator"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ruqqie"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"userId"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"updatedAt"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-11-17T17:35:11.122Z"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"createdAt"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-11-17T17:35:11.122Z"</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+
+</span></code></pre><h2 id='get-user-recipes'>Get User Recipes</h2><h3 id='request-8'>Request</h3>
+<ul>
+<li>Endpoint: Get: <code>/api/v1/:userId/recipes</code> </li>
+<li>Body  <code>(application/json)</code> 
+### Response</li>
+<li>Status: <code>200 ok</code> </li>
+<li>Body  <code>(application/json)</code> </li>
+</ul>
+
+<blockquote>
+<p>Response:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="w">
+</span><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"recipeName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"sweet pizza"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"ingredient"</span><span class="p">:</span><span class="w"> </span><span class="s2">"pizza"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"details"</span><span class="p">:</span><span class="w"> </span><span class="s2">"pizza"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"picture"</span><span class="p">:</span><span class="w"> </span><span class="s2">"nwjgqy0bz4iv8z4zmlrv"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"creator"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ruqqie"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"userId"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"upvotes"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"downvotes"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"views"</span><span class="p">:</span><span class="w"> </span><span class="mi">18</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"createdAt"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-11-16T18:48:52.306Z"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"updatedAt"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-11-17T13:48:12.574Z"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"Reviews"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+            </span><span class="p">{</span><span class="w">
+                </span><span class="s2">"review"</span><span class="p">:</span><span class="w"> </span><span class="s2">"nice"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"User"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                    </span><span class="s2">"fullName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"new girl"</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"updatedAt"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-11-16T17:34:43.717Z"</span><span class="w">
+                </span><span class="p">}</span><span class="w">
+            </span><span class="p">}</span><span class="w">
+        </span><span class="p">]</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"recipeName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"sweet pizza"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"ingredient"</span><span class="p">:</span><span class="w"> </span><span class="s2">"pizza"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"details"</span><span class="p">:</span><span class="w"> </span><span class="s2">"pizza"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"picture"</span><span class="p">:</span><span class="w"> </span><span class="s2">"et1xp6qa7a7cznkfpgwn"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"creator"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ruqqie"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"userId"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"upvotes"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"downvotes"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"views"</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"createdAt"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-11-16T09:51:19.371Z"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"updatedAt"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-11-17T12:37:19.379Z"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"Reviews"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+            </span><span class="p">{</span><span class="w">
+                </span><span class="s2">"review"</span><span class="p">:</span><span class="w"> </span><span class="s2">"nice"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"User"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                    </span><span class="s2">"fullName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"new girl"</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"updatedAt"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-11-16T17:34:43.717Z"</span><span class="w">
+                </span><span class="p">}</span><span class="w">
+            </span><span class="p">}</span><span class="w">
+        </span><span class="p">]</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+</span><span class="p">]</span><span class="w">
+
+</span></code></pre><h2 id='get-all-recipes'>Get All Recipes</h2><h3 id='request-9'>Request</h3>
+<ul>
+<li>Endpoint: Get: <code>/api/v1/recipes</code> </li>
+<li>Body  <code>(application/json)</code> 
+### Response</li>
+<li>Status: <code>200 ok</code> </li>
+<li>Body  <code>(application/json)</code> </li>
+</ul>
+
+<blockquote>
+<p>Response:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="w">
+</span><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"recipeName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"sweet pizza"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"ingredient"</span><span class="p">:</span><span class="w"> </span><span class="s2">"pizza"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"details"</span><span class="p">:</span><span class="w"> </span><span class="s2">"pizza"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"picture"</span><span class="p">:</span><span class="w"> </span><span class="s2">"nwjgqy0bz4iv8z4zmlrv"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"creator"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ruqqie"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"userId"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"upvotes"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"downvotes"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"views"</span><span class="p">:</span><span class="w"> </span><span class="mi">18</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"createdAt"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-11-16T18:48:52.306Z"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"updatedAt"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-11-17T13:48:12.574Z"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"Reviews"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+            </span><span class="p">{</span><span class="w">
+                </span><span class="s2">"review"</span><span class="p">:</span><span class="w"> </span><span class="s2">"nice"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"User"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                    </span><span class="s2">"fullName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"new girl"</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"updatedAt"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-11-16T17:34:43.717Z"</span><span class="w">
+                </span><span class="p">}</span><span class="w">
+            </span><span class="p">}</span><span class="w">
+        </span><span class="p">]</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"recipeName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"sweet pizza"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"ingredient"</span><span class="p">:</span><span class="w"> </span><span class="s2">"pizza"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"details"</span><span class="p">:</span><span class="w"> </span><span class="s2">"pizza"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"picture"</span><span class="p">:</span><span class="w"> </span><span class="s2">"et1xp6qa7a7cznkfpgwn"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"creator"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ruqqie"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"userId"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"upvotes"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"downvotes"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"views"</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"createdAt"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-11-16T09:51:19.371Z"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"updatedAt"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-11-17T12:37:19.379Z"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"Reviews"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+            </span><span class="p">{</span><span class="w">
+                </span><span class="s2">"review"</span><span class="p">:</span><span class="w"> </span><span class="s2">"nice"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"User"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                    </span><span class="s2">"fullName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"new girl"</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"updatedAt"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-11-16T17:34:43.717Z"</span><span class="w">
+                </span><span class="p">}</span><span class="w">
+            </span><span class="p">}</span><span class="w">
+        </span><span class="p">]</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"recipeName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"rice"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"ingredient"</span><span class="p">:</span><span class="w"> </span><span class="s2">"rice cook"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"details"</span><span class="p">:</span><span class="w"> </span><span class="s2">"rice cook"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"picture"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ywpnzrrfgzmftmvbzzsr"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"creator"</span><span class="p">:</span><span class="w"> </span><span class="s2">"joyce"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"userId"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"upvotes"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"downvotes"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"views"</span><span class="p">:</span><span class="w"> </span><span class="mi">56</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"createdAt"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-11-15T18:06:48.015Z"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"updatedAt"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-11-17T13:44:55.411Z"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"Reviews"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+            </span><span class="p">{</span><span class="w">
+                </span><span class="s2">"review"</span><span class="p">:</span><span class="w"> </span><span class="s2">"nice"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"User"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                    </span><span class="s2">"fullName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Rukayat Odukoya"</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"updatedAt"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-11-17T17:22:42.575Z"</span><span class="w">
+                </span><span class="p">}</span><span class="w">
+            </span><span class="p">}</span><span class="w">
+        </span><span class="p">]</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+</span><span class="p">]</span><span class="w">
+
+</span></code></pre><h2 id='modify-recipe'>Modify Recipe</h2><h3 id='request-10'>Request</h3>
+<ul>
+<li>Endpoint: Put: <code>/api/v1/recipes/:recipeId</code> </li>
+<li>Body  <code>(application/json)</code> 
+### Response</li>
+<li>Status: <code>200 ok</code> </li>
+<li>Body  <code>(application/json)</code> </li>
+</ul>
+
+<blockquote>
+<p>Request:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="s2">"recipeName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"pizza"</span><span class="w">
+</span><span class="p">},</span><span class="w">
+</span></code></pre>
+<blockquote>
+<p>Response:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Recipe modified successfully!"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"recipeName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"pizza"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"ingredient"</span><span class="p">:</span><span class="w"> </span><span class="s2">"pizza"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"details"</span><span class="p">:</span><span class="w"> </span><span class="s2">"pizza"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"picture"</span><span class="p">:</span><span class="w"> </span><span class="s2">"et1xp6qa7a7cznkfpgwn"</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+
+</span></code></pre><h2 id='view-recipes'>View Recipes</h2><h3 id='request-11'>Request</h3>
+<ul>
+<li>Endpoint: Get: <code>/api/v1/recipes/:recipeId</code> </li>
+<li>Body  <code>(application/json)</code> 
+### Response</li>
+<li>Status: <code>200 ok</code> </li>
+<li>Body  <code>(application/json)</code> </li>
+</ul>
+
+<blockquote>
+<p>Response:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"recipeName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"pizza"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"ingredient"</span><span class="p">:</span><span class="w"> </span><span class="s2">"pizza"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"details"</span><span class="p">:</span><span class="w"> </span><span class="s2">"pizza"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"picture"</span><span class="p">:</span><span class="w"> </span><span class="s2">"et1xp6qa7a7cznkfpgwn"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"creator"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ruqqie"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"userId"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"upvotes"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"downvotes"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"views"</span><span class="p">:</span><span class="w"> </span><span class="mi">57</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"createdAt"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-11-15T18:06:48.015Z"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"updatedAt"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-11-17T17:57:16.346Z"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"Reviews"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">13</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"review"</span><span class="p">:</span><span class="w"> </span><span class="s2">"nice"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"User"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"fullName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Joyce Akpan"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"updatedAt"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-11-17T17:22:42.575Z"</span><span class="w">
+            </span><span class="p">}</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+    </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+
+</span></code></pre><h2 id='delete-recipes'>Delete Recipes</h2><h3 id='request-12'>Request</h3>
+<ul>
+<li>Endpoint: Delete: <code>/api/v1/recipes/:recipeId</code> </li>
+<li>Body  <code>(application/json)</code> 
+### Response</li>
+<li>Status: <code>200 ok</code> </li>
+<li>Body  <code>(application/json)</code> </li>
+</ul>
+
+<blockquote>
+<p>Response:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Recipe deleted successfully!"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+
+</span></code></pre><h2 id='post-reviews'>Post Reviews</h2><h3 id='request-13'>Request</h3>
+<ul>
+<li>Endpoint: Post: <code>/api/v1/recipes/:recipeId/reviews</code> </li>
+<li>Body  <code>(application/json)</code> 
+### Response</li>
+<li>Status: <code>200 ok</code> </li>
+<li>Body  <code>(application/json)</code> </li>
+</ul>
+
+<blockquote>
+<p>Request:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="s2">"review"</span><span class="p">:</span><span class="w"> </span><span class="s2">"nice"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"userId"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="w">
+</span><span class="p">},</span><span class="w">
+</span></code></pre>
+<blockquote>
+<p>Response:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"recipeId"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"review"</span><span class="p">:</span><span class="w"> </span><span class="s2">"nice"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"userId"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"updatedAt"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-11-17T18:03:20.955Z"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"createdAt"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-11-17T18:03:20.955Z"</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+
+</span></code></pre><h2 id='get-recipe-reviews'>Get Recipe Reviews</h2><h3 id='request-14'>Request</h3>
+<ul>
+<li>Endpoint: Get: <code>/api/v1/recipes/:recipeId/reviews</code> </li>
+<li>Body  <code>(application/json)</code> 
+### Response</li>
+<li>Status: <code>200 ok</code> </li>
+<li>Body  <code>(application/json)</code> </li>
+</ul>
+
+<blockquote>
+<p>Response:</p>
 </blockquote>
 <pre class="highlight json tab-json"><code><span class="p">[</span><span class="w">
-  </span><span class="p">{</span><span class="w">
-    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Fluffums"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"breed"</span><span class="p">:</span><span class="w"> </span><span class="s2">"calico"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"fluffiness"</span><span class="p">:</span><span class="w"> </span><span class="mi">6</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"cuteness"</span><span class="p">:</span><span class="w"> </span><span class="mi">7</span><span class="w">
-  </span><span class="p">},</span><span class="w">
-  </span><span class="p">{</span><span class="w">
-    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Max"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"breed"</span><span class="p">:</span><span class="w"> </span><span class="s2">"unknown"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"fluffiness"</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"cuteness"</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="w">
-  </span><span class="p">}</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"userId"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"recipeId"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"review"</span><span class="p">:</span><span class="w"> </span><span class="s2">"nice</span><span class="se">\n</span><span class="s2">"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"createdAt"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-11-15T16:09:27.991Z"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"updatedAt"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-11-15T16:09:27.991Z"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"userId"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"recipeId"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"review"</span><span class="p">:</span><span class="w"> </span><span class="s2">"nice recipe"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"createdAt"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-11-17T10:00:22.156Z"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"updatedAt"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-11-17T10:00:22.156Z"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"userId"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"recipeId"</span><span class="p">:</span><span class="w"> </span><span class="mi">24</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"review"</span><span class="p">:</span><span class="w"> </span><span class="s2">"nice recipe"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"createdAt"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-11-17T18:03:11.010Z"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"updatedAt"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-11-17T18:03:11.010Z"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"userId"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"recipeId"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"review"</span><span class="p">:</span><span class="w"> </span><span class="s2">"nice"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"createdAt"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-11-17T18:03:20.955Z"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"updatedAt"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-11-17T18:03:20.955Z"</span><span class="w">
+    </span><span class="p">}</span><span class="w">
 </span><span class="p">]</span><span class="w">
-</span></code></pre>
-<p>This endpoint retrieves all kittens.</p>
-<h3 id='http-request'>HTTP Request</h3>
-<p><code>GET http://example.com/api/kittens</code></p>
-<h3 id='query-parameters'>Query Parameters</h3>
-<table><thead>
-<tr>
-<th>Parameter</th>
-<th>Default</th>
-<th>Description</th>
-</tr>
-</thead><tbody>
-<tr>
-<td>include_cats</td>
-<td>false</td>
-<td>If set to true, the result will also include cats.</td>
-</tr>
-<tr>
-<td>available</td>
-<td>true</td>
-<td>If set to false, the result will include kittens that have already been adopted.</td>
-</tr>
-</tbody></table>
 
-<aside class="success">
-Remember — a happy kitten is an authenticated kitten!
-</aside>
-<h2 id='get-a-specific-kitten'>Get a Specific Kitten</h2><pre class="highlight ruby tab-ruby"><code><span class="nb">require</span> <span class="s1">'kittn'</span>
+</span></code></pre><h2 id='add-favorite-recipes'>Add Favorite Recipes</h2><h3 id='request-15'>Request</h3>
+<ul>
+<li>Endpoint: Post: <code>/api/v1/users/:recipeId/recipes</code> </li>
+<li>Body  <code>(application/json)</code> 
+### Response</li>
+<li>Status: <code>200 ok</code> </li>
+<li>Body  <code>(application/json)</code> </li>
+</ul>
 
-<span class="n">api</span> <span class="o">=</span> <span class="no">Kittn</span><span class="o">::</span><span class="no">APIClient</span><span class="p">.</span><span class="nf">authorize!</span><span class="p">(</span><span class="s1">'meowmeowmeow'</span><span class="p">)</span>
-<span class="n">api</span><span class="p">.</span><span class="nf">kittens</span><span class="p">.</span><span class="nf">get</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
-</code></pre><pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">kittn</span>
-
-<span class="n">api</span> <span class="o">=</span> <span class="n">kittn</span><span class="o">.</span><span class="n">authorize</span><span class="p">(</span><span class="s">'meowmeowmeow'</span><span class="p">)</span>
-<span class="n">api</span><span class="o">.</span><span class="n">kittens</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
-</code></pre><pre class="highlight shell tab-shell"><code>curl <span class="s2">"http://example.com/api/kittens/2"</span>
-  -H <span class="s2">"Authorization: meowmeowmeow"</span>
-</code></pre><pre class="highlight javascript tab-javascript"><code><span class="kr">const</span> <span class="nx">kittn</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'kittn'</span><span class="p">);</span>
-
-<span class="kd">let</span> <span class="nx">api</span> <span class="o">=</span> <span class="nx">kittn</span><span class="p">.</span><span class="nx">authorize</span><span class="p">(</span><span class="s1">'meowmeowmeow'</span><span class="p">);</span>
-<span class="kd">let</span> <span class="nx">max</span> <span class="o">=</span> <span class="nx">api</span><span class="p">.</span><span class="nx">kittens</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="mi">2</span><span class="p">);</span>
-</code></pre>
 <blockquote>
-<p>The above command returns JSON structured like this:</p>
+<p>Request:</p>
 </blockquote>
 <pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-  </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Max"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"breed"</span><span class="p">:</span><span class="w"> </span><span class="s2">"unknown"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"fluffiness"</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"cuteness"</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="w">
-</span><span class="p">}</span><span class="w">
+    </span><span class="s2">"userId"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="w">
+</span><span class="p">},</span><span class="w">
 </span></code></pre>
-<p>This endpoint retrieves a specific kitten.</p>
-
-<aside class="warning">Inside HTML code blocks like this one, you can't use Markdown, so use <code>&lt;code&gt;</code> blocks to denote code.</aside>
-<h3 id='http-request-2'>HTTP Request</h3>
-<p><code>GET http://example.com/kittens/&lt;ID&gt;</code></p>
-<h3 id='url-parameters'>URL Parameters</h3>
-<table><thead>
-<tr>
-<th>Parameter</th>
-<th>Description</th>
-</tr>
-</thead><tbody>
-<tr>
-<td>ID</td>
-<td>The ID of the kitten to retrieve</td>
-</tr>
-</tbody></table>
-<h2 id='delete-a-specific-kitten'>Delete a Specific Kitten</h2><pre class="highlight ruby tab-ruby"><code><span class="nb">require</span> <span class="s1">'kittn'</span>
-
-<span class="n">api</span> <span class="o">=</span> <span class="no">Kittn</span><span class="o">::</span><span class="no">APIClient</span><span class="p">.</span><span class="nf">authorize!</span><span class="p">(</span><span class="s1">'meowmeowmeow'</span><span class="p">)</span>
-<span class="n">api</span><span class="p">.</span><span class="nf">kittens</span><span class="p">.</span><span class="nf">delete</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
-</code></pre><pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">kittn</span>
-
-<span class="n">api</span> <span class="o">=</span> <span class="n">kittn</span><span class="o">.</span><span class="n">authorize</span><span class="p">(</span><span class="s">'meowmeowmeow'</span><span class="p">)</span>
-<span class="n">api</span><span class="o">.</span><span class="n">kittens</span><span class="o">.</span><span class="n">delete</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
-</code></pre><pre class="highlight shell tab-shell"><code>curl <span class="s2">"http://example.com/api/kittens/2"</span>
-  -X DELETE
-  -H <span class="s2">"Authorization: meowmeowmeow"</span>
-</code></pre><pre class="highlight javascript tab-javascript"><code><span class="kr">const</span> <span class="nx">kittn</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'kittn'</span><span class="p">);</span>
-
-<span class="kd">let</span> <span class="nx">api</span> <span class="o">=</span> <span class="nx">kittn</span><span class="p">.</span><span class="nx">authorize</span><span class="p">(</span><span class="s1">'meowmeowmeow'</span><span class="p">);</span>
-<span class="kd">let</span> <span class="nx">max</span> <span class="o">=</span> <span class="nx">api</span><span class="p">.</span><span class="nx">kittens</span><span class="p">.</span><span class="k">delete</span><span class="p">(</span><span class="mi">2</span><span class="p">);</span>
-</code></pre>
 <blockquote>
-<p>The above command returns JSON structured like this:</p>
+<p>Response:</p>
 </blockquote>
 <pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-  </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"deleted"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">":("</span><span class="w">
+    </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"You successfully choose recipe id 3 as your favorite recipes"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"userId"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"recipeId"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="w">
+    </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span><span class="w">
+
+</span></code></pre><h2 id='get-user-favorite-recipes'>Get User Favorite Recipes</h2><h3 id='request-16'>Request</h3>
+<ul>
+<li>Endpoint: Get: <code>/api/v1/users/:userId/recipes</code> </li>
+<li>Body  <code>(application/json)</code> 
+### Response</li>
+<li>Status: <code>200 ok</code> </li>
+<li>Body  <code>(application/json)</code> </li>
+</ul>
+
+<blockquote>
+<p>Response:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"userId"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"recipeId"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"createdAt"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-11-15T12:51:13.831Z"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"updatedAt"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-11-15T12:51:13.831Z"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"Recipe"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"recipeName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"pizza"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"ingredient"</span><span class="p">:</span><span class="w"> </span><span class="s2">"pizza"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"details"</span><span class="p">:</span><span class="w"> </span><span class="s2">"pizza"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"upvotes"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"downvotes"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"picture"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ccqjqdkddymezp73dnyn"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"views"</span><span class="p">:</span><span class="w"> </span><span class="mi">32</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"creator"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ruqqie"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"updatedAt"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-11-17T13:45:16.860Z"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"User"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                </span><span class="s2">"username"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ruqqie"</span><span class="w">
+            </span><span class="p">}</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"userId"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"recipeId"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"createdAt"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-11-16T19:08:20.392Z"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"updatedAt"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-11-16T19:08:20.392Z"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"Recipe"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"recipeName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"rtyukl"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"ingredient"</span><span class="p">:</span><span class="w"> </span><span class="s2">"dfghjk"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"details"</span><span class="p">:</span><span class="w"> </span><span class="s2">"fghj"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"upvotes"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"downvotes"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"picture"</span><span class="p">:</span><span class="w"> </span><span class="s2">"nwjgqy0bz4iv8z4zmlrv"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"views"</span><span class="p">:</span><span class="w"> </span><span class="mi">18</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"creator"</span><span class="p">:</span><span class="w"> </span><span class="s2">"joyce"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"updatedAt"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-11-17T13:48:12.574Z"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"User"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                </span><span class="s2">"username"</span><span class="p">:</span><span class="w"> </span><span class="s2">"joyce"</span><span class="w">
+            </span><span class="p">}</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+</span><span class="p">]</span><span class="w">
+
+</span></code></pre><h2 id='upvote-recipes'>Upvote Recipes</h2><h3 id='request-17'>Request</h3>
+<ul>
+<li>Endpoint: Post: <code>/api/v1/users/upvote/:recipeId</code> </li>
+<li>Body  <code>(application/json)</code> 
+### Response</li>
+<li>Status: <code>200 ok</code> </li>
+<li>Body  <code>(application/json)</code> </li>
+</ul>
+
+<blockquote>
+<p>Request:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="s2">"userId"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="w">
+</span><span class="p">},</span><span class="w">
 </span></code></pre>
-<p>This endpoint deletes a specific kitten.</p>
-<h3 id='http-request-3'>HTTP Request</h3>
-<p><code>DELETE http://example.com/kittens/&lt;ID&gt;</code></p>
-<h3 id='url-parameters-2'>URL Parameters</h3>
-<table><thead>
-<tr>
-<th>Parameter</th>
-<th>Description</th>
-</tr>
-</thead><tbody>
-<tr>
-<td>ID</td>
-<td>The ID of the kitten to delete</td>
-</tr>
-</tbody></table>
-<h1 id='errors'>Errors</h1>
+<blockquote>
+<p>Response:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="s2">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"upvote successful"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"recipeName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"pizza"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"ingredient"</span><span class="p">:</span><span class="w"> </span><span class="s2">"pizza"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"details"</span><span class="p">:</span><span class="w"> </span><span class="s2">"pizza"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"picture"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ccqjqdkddymezp73dnyn"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"creator"</span><span class="p">:</span><span class="w"> </span><span class="s2">"rukky"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"userId"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"upvotes"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"downvotes"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"views"</span><span class="p">:</span><span class="w"> </span><span class="mi">32</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"createdAt"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-11-15T12:51:04.538Z"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"updatedAt"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-11-17T18:20:17.532Z"</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+
+</span></code></pre><h2 id='downvote-recipes'>Downvote Recipes</h2><h3 id='request-18'>Request</h3>
+<ul>
+<li>Endpoint: Post: <code>/api/v1/users/downvote/:recipeId</code> </li>
+<li>Body  <code>(application/json)</code> 
+### Response</li>
+<li>Status: <code>200 ok</code> </li>
+<li>Body  <code>(application/json)</code> </li>
+</ul>
+
+<blockquote>
+<p>Request:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="s2">"userId"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="w">
+</span><span class="p">},</span><span class="w">
+</span></code></pre>
+<blockquote>
+<p>Response:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="s2">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"vote updated successfully"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">24</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"recipeName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"pizza"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"ingredient"</span><span class="p">:</span><span class="w"> </span><span class="s2">"pizza"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"details"</span><span class="p">:</span><span class="w"> </span><span class="s2">"pizza"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"picture"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ccqjqdkddymezp73dnyn"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"creator"</span><span class="p">:</span><span class="w"> </span><span class="s2">"rukky"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"userId"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"upvotes"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"downvotes"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"views"</span><span class="p">:</span><span class="w"> </span><span class="mi">32</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"createdAt"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-11-15T12:51:04.538Z"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"updatedAt"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-11-17T18:22:11.853Z"</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+
+</span></code></pre><h1 id='errors'>Errors</h1>
 <aside class="notice">This error section is stored in a separate file in `includes/_errors.md`. Slate allows you to optionally separate out your docs into many files...just save them to the `includes` folder and add them to the top of your `index.md`'s frontmatter. Files are included in the order listed.</aside>
 
 <p>The Kittn API uses the following error codes:</p>
@@ -492,9 +1150,6 @@ Remember — a happy kitten is an authenticated kitten!
       </div>
       <div class="dark-box">
           <div class="lang-selector">
-                <a href="#" data-language-name="shell">shell</a>
-                <a href="#" data-language-name="ruby">ruby</a>
-                <a href="#" data-language-name="python">python</a>
                 <a href="#" data-language-name="javascript">javascript</a>
           </div>
       </div>
